@@ -22,6 +22,7 @@ $RECYCLE.BIN/
 NTUSER.DAT*
 ntuser.dat*
 hiberfil.sys
+ntuser.ini
 
 # Legacy Windows junction directories
 Application Data/
@@ -34,6 +35,33 @@ Local/
 Roaming/
 ProgramData/
 OneDrive/
+
+# Common user clutter directories
+Desktop/
+Downloads/
+Pictures/
+Videos/
+Favorites/
+Searches/
+Music/
+Public/
+
+# Common dot directory noise
+.cache/
+.config/
+.local/
+.chocolatey/
+.ollama/
+.pm2/
+.idlerc/
+.pcr-stats.json
+.webui_secret_key
+
+# Bash / shell history and config
+.bash_history
+.bash_profile
+.bash_logout
+.inputrc
 
 # AI, CLI, and development tool directories
 .pyclutter
@@ -86,6 +114,7 @@ OneDrive/
 .pqc/
 .promptfoo/
 .python_version
+.python-version
 .python_history
 .qoder/
 .quokka/
@@ -133,6 +162,8 @@ NUCLEAR_OPTION.md
 OPTIMIZATION*
 PRODUCTION_VERIFICATION*
 Passwords.txt
+Passwords.kdbx
+"Chrome Passwords.csv"
 PowerShell/
 QUICK*
 QuillSpace/
