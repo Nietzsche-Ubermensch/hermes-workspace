@@ -286,3 +286,27 @@ env/
 *.tar.gz
 *.7z
 .hermes/auth.*
+
+# Installers and Binaries
+*.exe
+bin/
+
+# Environment and Caches
+.agentmemory/
+.cargo/
+.dotnet/
+.nuget/
+npm-cache/
+Miniconda*
+
+# Editor and System files
+.cursor/
+.viminfo
+.node_repl_history
+.chrome-devtools-mcp-profile/
+
+# Keys and Secrets
+Keys/
+.mcp-auth/
+*.pem
+*.xdb
