@@ -310,3 +310,32 @@ Keys/
 .mcp-auth/
 *.pem
 *.xdb
+
+# Other AI/Agent Configs
+.claude.json*
+.grok/
+.iii/
+
+# Weird System/Temp Files
+-1.14-windows.xml
+.git-for-windows-updater
+cd
+file
+nul
+nul)
+Default.rdp
+
+# Unrelated Folders
+Archives/
+Loose/
+handoff/
+symlink-test/
+data/
+projects/
+.github/
+
+# Random Documents
+*.odt
+admission.txt
+Command.txt
+DASHBOARD_INSTRUCTIONS.txt
