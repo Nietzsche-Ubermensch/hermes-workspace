@@ -1,0 +1,134 @@
+# ~/.hermes/config.yaml
+# =============================================================================
+# CORE SETTINGS — Configure these first.
+# =============================================================================
+
+model:
+  # Primary model and provider for all agent operations
+  default: "deepseek-v4-pro"
+  provider: "deepseek"
+  # Fallback providers are tried in order when the primary is unavailable
+  fallback_providers:
+    - "venice"
+    - "moonshot"
+    - "opencode-go"
+
+# =============================================================================
+# DISPLAY & UX
+# =============================================================================
+
+display:
+  # UI theme: hermes-dark | hermes-light | default
+  skin: hermes-dark
+  # Path to an .env file whose variables are injected as ${VAR} references
+  # throughout this config. Keep this file out of version control.
+  env_path: "C:/Users/peter/Desktop/pi/.env"
+
+# =============================================================================
+# ADVANCED / OPTIONAL — Tune only when needed.
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Provider definitions
+# ---------------------------------------------------------------------------
+# Each provider block declares a base URL, API key, and the models it serves.
+# The API key references an environment variable via ${...} syntax — the actual
+# secret lives in the env_path file above, never in this config.
+
+providers:
+
+  deepseek:
+    base_url: "https://api.deepseek.com"
+    api_key: "${DEEPSEEK_API_KEY}"
+    models:
+      - id: "deepseek-v4-pro"
+        name: "DeepSeek V4 Pro"
+        context_length: 1000000
+        reasoning: true
+      - id: "deepseek-v4-flash"
+        name: "DeepSeek V4 Flash"
+        context_length: 1000000
+        reasoning: true
+
+  venice:
+    base_url: "https://api.venice.ai/api/v1"
+    api_key: "${VENICE_API_KEY}"
+    models:
+      - id: "venice-uncensored-1-2"
+        name: "Venice Uncensored"
+        context_length: 65536
+        reasoning: false
+      - id: "qwen3-4b"
+        name: "Qwen 3 4B"
+        context_length: 32768
+        reasoning: false
+      - id: "kimi-k2-6"
+        name: "Kimi K2.6"
+        context_length: 200000
+        reasoning: true
+      - id: "zai-org-glm-5-1"
+        name: "GLM 5.1"
+        context_length: 200000
+        reasoning: true
+
+  moonshot:
+    base_url: "https://api.moonshot.ai/v1"
+    api_key: "${MOONSHOT_API_KEY}"
+    models:
+      - id: "moonshot-v1-8k"
+      - id: "moonshot-v1-32k"
+      - id: "moonshot-v1-128k"
+
+  opencode-go:
+    base_url: "https://opencode.ai/zen/go/v1"
+    api_key: "${OPENCODE_GO_API_KEY}"
+
+# ---------------------------------------------------------------------------
+# MCP (Model Context Protocol) servers
+# ---------------------------------------------------------------------------
+# Each entry registers an external tool server. Two transport modes:
+#   • command  — spawn a local process (npx, python, etc.)
+#   • url      — connect to a remote HTTP endpoint
+# Blank lines separate servers for visual scanability.
+
+mcp_servers:
+
+  brave-search:
+    command: "npx"
+    args: ["-y", "@brave/brave-search-mcp-server@2.0.82"]
+    env:
+      BRAVE_API_KEY: "${BRAVE_API_KEY}"
+
+  exa:
+    url: "https://mcp.exa.ai/mcp"
+    transport: "http"
+    headers:
+      Authorization: "Bearer ${EXA_API_KEY}"
+
+  tavily:
+    command: "npx"
+    args: ["-y", "tavily-mcp@0.2.19"]
+    env:
+      TAVILY_API_KEY: "${TAVILY_API_KEY}"
+
+  perplexity:
+    command: "npx"
+    args: ["-y", "perplexity-mcp@0.2.3"]
+    env:
+      PERPLEXITY_API_KEY: "${PERPLEXITY_API_KEY}"
+
+  context7:
+    command: "npx"
+    args: ["-y", "@upstash/context7-mcp", "--api-key", "${CONTEXT7_API_KEY}"]
+
+  firecrawl:
+    command: "npx"
+    args: ["-y", "firecrawl-mcp@3.17.0"]
+    env:
+      FIRECRAWL_API_KEY: "${FIRECRAWL_API_KEY}"
+
+  blackbox:
+    url: "https://cloud.blackbox.ai/api/mcp"
+    transport: "http"
+    headers:
+      Authorization: "Bearer ${BLACKBOX_API_KEY}"

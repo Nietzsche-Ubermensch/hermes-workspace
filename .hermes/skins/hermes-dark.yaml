@@ -1,0 +1,53 @@
+name: hermes-dark
+description: Dark theme inspired by the Hermes website — deep shadows with gold/bronze accents
+
+# Hermes Dark — website-inspired dark theme with gold/bronze accents
+colors:
+  banner_border: "#CD7F32"
+  banner_title: "#FFD700"
+  banner_accent: "#FFBF00"
+  banner_dim: "#8B7355"
+  banner_text: "#E8DCC8"
+  ui_accent: "#FFBF00"
+  ui_label: "#C9A96E"
+  ui_ok: "#7BC67E"
+  ui_error: "#E05555"
+  ui_warn: "#D4A843"
+  prompt: "#E8DCC8"
+  input_rule: "#CD7F32"
+  response_border: "#FFD700"
+  session_label: "#DAA520"
+  session_border: "#5A5040"
+  status_bar_bg: "#0D0D12"
+  voice_status_bg: "#0D0D12"
+  completion_menu_bg: "#0D0D12"
+  completion_menu_current_bg: "#1A1A2E"
+  completion_menu_meta_bg: "#0D0D12"
+  completion_menu_meta_current_bg: "#1A1A2E"
+
+spinner:
+  waiting_faces:
+    - "(⚕)"
+    - "(☤)"
+    - "(✦)"
+    - "(◈)"
+  thinking_faces:
+    - "(☤)"
+    - "(⚕)"
+    - "(⟡)"
+    - "(⬡)"
+  thinking_verbs:
+    - "weaving"
+    - "forging"
+    - "channeling"
+    - "transcribing"
+    - "deciphering"
+  wings:
+    - ["╭☤", "☤╮"]
+    - ["╭✦", "✦╮"]
+
+branding:
+  agent_name: "Hermes"
+  welcome: "☤ Hermes — the self-improving agent"
+  goodbye: "☤"
+  response_label: "Hermes"
