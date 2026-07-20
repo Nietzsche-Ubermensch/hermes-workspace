@@ -1,341 +1,139 @@
-﻿# =============================================================================
-# .gitignore — Windows AI / CLI / Developer Home Directory
-# =============================================================================
-
-# Core package and build noise
-node_modules/
-package-lock.json.bak
-package.json.bak
-pnpm-lock.yaml
-bun.lock
-*.log
-*.tmp
-*.bak
-*~
-
-# Windows system artifacts
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-desktop.ini
-$RECYCLE.BIN/
-NTUSER.DAT*
-ntuser.dat*
-hiberfil.sys
-ntuser.ini
-
-# Legacy Windows junction directories
-Application Data/
-Local Settings/
-My Documents/
-Start Menu/
-Documents/
-AppData/
-Local/
-Roaming/
-ProgramData/
-OneDrive/
-
-# Common user clutter directories
-Desktop/
-Downloads/
-Pictures/
-Videos/
-Favorites/
-Searches/
-Music/
-Public/
-
-# Common dot directory noise
-.cache/
-.config/
-.local/
-.chocolatey/
-.ollama/
-.pm2/
-.idlerc/
-.pcr-stats.json
-.webui_secret_key
-
-# Bash / shell history and config
-.bash_history
-.bash_profile
-.bash_logout
-.inputrc
-
-# AI, CLI, and development tool directories
-.pyclutter
-.ada*/
-.affinity/
-.agents/
-.augment/
-.bash_aliases
-.bashrc*
-.bun/
-.claude/
-.codebuddy/
-.codeium/
-.commandcode/
-.conda/
-.condarc
-.context7/
-.dockerignore
-.env*
-.env.backup*
-.env_combined*
-.factory/
-.firecrawl/
-.git-credentials
-.gitconfig
-.gitignore_global
-.gk/
-.gnupg/
-.gpt/
-.iflow/
-.jules/
-.junie/
-.kilocode/
-.kimi*
-.kimi-env
-.kimi-api-key*
-.kiro/
-.kode/
-.mcpjam/
-.mobisystems/
-.mux/
-.neovate/
-.npmrc
-.oh-my-zsh/
-.openclaw/
-.openhands/
-.pi/
-.pi-lens/
-.pochi/
-.pqc/
-.promptfoo/
-.python_version
-.python-version
-.python_history
-.qoder/
-.quokka/
-.qwen/
-.railway/
-.rbql*
-.roo/
-.rustup/
-.secrets*
-.snowflake/
-.ssh*
-.tooluniverse/
-.trae*
-.vibe/
-.wallaby/
-.wslconfig
-.zencoder/
-.zsh/
-.zshrc
-
-# User-generated AI artifacts and sensitive files
-AGENTS.txt
-AUDIT/
-*.audit*
-*.sig
-*.signature*
-BATEY*
-COMPLIANCE*
-CardScannerProject/
-ClawDBot*
-DELIVERY_PACKAGE*
-DEPLOYMENT*
-DO_THIS_NOW*
-Each
-End-to-End-AI-for-Science/
-FINAL_VRP*
-GROK_PROXY*
-Generate-*
-GitHub/
-HEARTBEAT.md
-INTEGRITY*
-Legal_Documents/
-MY-AI-APP*
-NUCLEAR_OPTION.md
-OPTIMIZATION*
-PRODUCTION_VERIFICATION*
-Passwords.txt
-Passwords.kdbx
-"Chrome Passwords.csv"
-PowerShell/
-QUICK*
-QuillSpace/
-README_COMBINED.md
-RESET*
-SCRAPER*
-SETUP*
-SHOW_VRP*
-SUBMISSION*
-SUPERGROK*
-ScannerProfiles/
-Scans/
-Scripts/
-Scripts.ps1
-TURNKEY*
-Tuple*
-VRP*
-WRESTLING*
-WindowsPowerShell/
-ai-scripts/
-cardenhancer-web/
-check-profile.ps1
-check-scanner.ps1
-claude/
-clawdbot-railway-template/
-clean-remnants.ps1
-codeflash_env.ps1
-copilot-cli/
-dcpt_pipeline/
-debug_env.ts
-deploy_*.ps1
-desktop.ini
-diagnose_env.js
-document-signing/
-download.ps1
-eternal_invariant_ravel.py
-example_grid.yaml
-experiment.md
-fix-*.ps1
-gemma4-gradio/
-git-ai-commit.ps1
-grok-*
-grok_loop_harness.py
-hey
-ibm_ai_key*
-imagenai/
-invariants.json
-jupyterhub*
-kilo_config.json
-kimi-cli/
-kimi_full_client/
-kimi_sdk*
-light_account.key
-litellm*
-mbatey-api*
-message.txt
-mod2*
-multimodal-ai-integr/
-my-smart-wallets-app/
-neon-data-api*
-npm-audit.json
-nuke-paperstream.ps1
-opencode-project/
-oqs-*.zip
-ots_timestamp*
-parities.json
-path_backup.txt
-phase_transition*
-promptfooconfig.yaml
-ps7/
-ps_*.ps1
-python -m venv*
-requirements*.txt
-rlhffail*
-run_*.bat
-run_*.py
-run_*.ps1
-runpod*
-sCRIPT_CLASSIFICATION.md
-save_clipboard.ps1
-scan-remnants.ps1
-scrape_wrestling_cards.sh
-scraper/
-set-*.ps1
-set_secret*.js
-setup-*.ps1
-sign*.bat
-signature.*
-simple_hash_test.py
-skills/
-slh_*.pem
-sphincs_gui.pyw
-test-*.py
-the_nurse_public.asc
-tstar_engine/
-unified-app/
-untitled.py
-verify*.ps1
-verify*.bat
-vulnerability*
-y
-y.pub
-
-# General development artifacts
+# Build artifacts
+server/dist/
+client/dist/
 dist/
 build/
-out/
-*.pyc
-__pycache__/
-.venv/
-venv/
-env/
+
+# SQLite data
+data/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment variable files
+.env
+.env.*
 .env.local
-.DS_Store
+.env.production
+.env.development
+.env.test
+!.env.example
+
+# API keys, tokens, secrets — NEVER commit accidentally
+*api_key*
+*API_KEY*
+*token*
+*TOKEN*
+*secret*
+*SECRET*
+*_PAT*
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*
+*CREDENTIALS*
+
+# Named credential files
+credentials.json
+service-account.json
+firebase-config.json
+google-credentials.json
+hermes.key
+
+# Hermes config with secrets
+.hermes/.env
+
+# Blackbox config with keys
+.blackboxcli/settings.json
+.blackbox/mcp.json
+
+# SSH keys
+.ssh/
+id_rsa
+id_ed25519
+*.ssh
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+venv/
+.venv/
+env/
+ENV/
+
+# Node
+node_modules/
+.npm
+.yarn-integrity
+*.tsbuildinfo
+
+# Testing
+coverage/
+.nyc_output/
+.pytest_cache/
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+
+# IDE
+.vscode/
+.idea/
 *.swp
 *.swo
-.idea/
-.vscode/
-*.zip
-*.tar.gz
-*.7z
-.hermes/auth.*
+*~
 
-# Installers and Binaries
-*.exe
-bin/
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
 
-# Environment and Caches
-.agentmemory/
-.cargo/
-.dotnet/
-.nuget/
-npm-cache/
-Miniconda*
+# Docker
+.docker/
+docker-compose.override.yml
 
-# Editor and System files
-.cursor/
-.viminfo
-.node_repl_history
-.chrome-devtools-mcp-profile/
+# ONNX models
+*.onnx
 
-# Keys and Secrets
-Keys/
-.mcp-auth/
-*.pem
-*.xdb
+# Generated images
+*.png
+*.jpg
+*.jpeg
+output/
+generated/
 
-# Other AI/Agent Configs
-.claude.json*
-.grok/
-.iii/
+# Temporary
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
 
-# Weird System/Temp Files
--1.14-windows.xml
-.git-for-windows-updater
-cd
-file
-nul
-nul)
-Default.rdp
+# Runtime
+pids
+*.pid
+*.seed
+*.pid.lock
 
-# Unrelated Folders
-Archives/
-Loose/
-handoff/
-symlink-test/
-data/
-projects/
-.github/
-
-# Random Documents
-*.odt
-admission.txt
-Command.txt
-DASHBOARD_INSTRUCTIONS.txt
+# Cache
+.cache
+.parcel-cache
+.next
+.nuxt
+.docusaurus
+.svelte-kit/
+.vite/
